@@ -171,7 +171,7 @@ int handle_whiteboard_command(char* cmd, struct whiteboard_t *board) {
 int print_help() {
     printf("Whiteboard:\n");
     printf("    Use -i <path> to specify the path to the serial interface\n");
-    printf("    Use -s <scale> to specify the scale of the window (default is 2)");
+    printf("    Use -s <scale> to specify the scale of the window (default is 2)\n");
 }
 
 int get_cli_options(struct options_t* opts, int argc, char* argv[]) {
@@ -198,6 +198,7 @@ int get_cli_options(struct options_t* opts, int argc, char* argv[]) {
                 break;
             case 'h':
                 print_help();
+                return -1;
                 break;
             case ':':
                 return -1;
